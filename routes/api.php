@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\GameController;
+use App\Http\Controllers\LeaderboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function (Request $request) {
-    return response()->json('hey boyyy');
-});
+Route::get('/leaderboard', [LeaderboardController::class, 'show']);
+Route::post('/games',      [GameController::class, 'store']);
